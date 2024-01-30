@@ -24,7 +24,7 @@ jobs:
     # We only want to trigger Argos on PRs with the 'Argos' label
     # See https://stackoverflow.com/questions/62325286/run-github-actions-when-pull-requests-have-a-specific-label
     if: ${{ (github.event_name != 'pull_request' && github.ref_name == 'main') || (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Argos')) }}
-    runs-on: warp-ubuntu-latest-x64-16x
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
